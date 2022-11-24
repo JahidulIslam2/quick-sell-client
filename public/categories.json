@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Street bikes",
+        "img": "https://www.banglamotor.net/images/honda/honda-cbr150r-repsol-first1.jpg",
+        "from": "2500"
+    },
+    {
+        "name": "Off-road bikes",
+        "img": "https://mcn-images.bauersecure.com/wp-images/59317/615x0/kawasaki-kx450.jpg",
+        "from": "2100"
+    },
+    {
+        "name": "Smaller-engine bikes",
+        "img": "https://www.banglamotor.net/images/honda/honda-cbr150r-repsol-first1.jpg",
+        "from": "1200"
+    }
+]

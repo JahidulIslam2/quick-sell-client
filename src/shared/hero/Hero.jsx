@@ -11,7 +11,7 @@ const Hero = () => {
         >
         
             <div
-                className="absolute inset-0 bg-white/40 sm:bg-transparent sm:bg-gradient-to-r sm:from-blue-500/95 sm:to-white-500/25"
+                className="absolute inset-0 bg-white/40 sm:bg-transparent sm:bg-gradient-to-r sm:from-cyan-900/95 sm:to-white-500/25"
             ></div>
 
             <div

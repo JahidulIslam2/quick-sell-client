@@ -72,7 +72,7 @@ const Navbar = () => {
                                 <Link to='/'>About US</Link>
                             </li>
                             <li className="text-white font-bold hover:text-blue-600">
-                                <Link to='/'>Contact US</Link>
+                                <Link to='/signUp'>Sign Up</Link>
                             </li>
                         </ul>
                     </div>
