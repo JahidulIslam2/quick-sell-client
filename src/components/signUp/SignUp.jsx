@@ -238,7 +238,7 @@ const SignUp = () => {
                     >
                         <span className="ml-2"
                         >You have an account?
-                            <Link to="#"
+                            <Link to="/signIn"
                                 className="text-xs ml-2 text-blue-500 font-semibold"
                             >Login here</Link></span
                         >
