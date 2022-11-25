@@ -17,6 +17,7 @@ const Bookingmodal = ({ data,setData }) => {
         const email = form.email.value;
         const phone = form.phone.value;
         const location = form.location.value;
+ 
        
         const booking = {
             userName,
@@ -52,8 +53,6 @@ const Bookingmodal = ({ data,setData }) => {
     }
 
 
-
-
     return (
         <div>
 
@@ -62,7 +61,7 @@ const Bookingmodal = ({ data,setData }) => {
                 <div className="modal-box">
                     {/* close btn */}
                     <div className="modal-action">
-                        <label htmlFor="bookingModal" className="btn btn-ghost" >close</label>
+                        <label  htmlFor="bookingModal" className="btn btn-ghost" >close</label>
                     </div>
                     <form onSubmit={handleForm}>
 
