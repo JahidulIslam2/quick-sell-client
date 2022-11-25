@@ -1,12 +1,46 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ContextProvider } from '../authContext/AuthContext';
 
 const SignIn = () => {
+const {signInUserWithEmailpass,GoogleSignIn} =useContext(ContextProvider)
 
+    const loginFormHandler =(event) => {
+        event.preventDefault();
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
 
-    const loginFormHandler =() => {
+        signInUserWithEmailpass(email,password)
+        .then(result => {
+            const user=result.user;
+            console.log(user)
+        })
+        .catch((error)=>{
+            console.error(error)
+        })
+
 
     }
+
+
+    const googleBtnHandler =() =>{
+        GoogleSignIn()
+        .then(result => {
+            const user =result.user;
+            console.log(user)
+        })
+        .then((error) => {
+            console.error(error)
+        })
+
+
+    }
+
+
+    
+
 
     return (
         <div
@@ -28,7 +62,7 @@ const SignIn = () => {
           "
             >
                 <div className="font-medium self-center text-xl sm:text-3xl text-gray-800">
-                    Welcome Back
+                   Sign In Account
                 </div>
                 <div className="mt-4 self-center text-xl sm:text-sm text-gray-800">
                     Enter your credentials to access your account
@@ -143,29 +177,44 @@ const SignIn = () => {
                             >
                                 <span className="mr-2 uppercase">Sign In</span>
                                 <span>
-                                    <svg
-                                        className="h-6 w-6"
-                                        fill="none"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                                        />
-                                    </svg>
+                                   
                                 </span>
                             </button>
                         </div>
                     </form>
+
+                    <div className="divider">OR</div>
+
+                    <div className="flex w-full">
+                            <button
+                            onClick={googleBtnHandler}
+                                className="
+                    flex
+                    mt-2
+                    items-center
+                    justify-center
+                    focus:outline-none
+                    text-white text-sm
+                    sm:text-base
+                    bg-green-500
+                    hover:bg-blue-600
+                    rounded-2xl
+                    py-2
+                    w-full
+                    transition
+                    duration-150
+                    ease-in
+                  "
+                            >
+                                <span className="mr-2 uppercase">Sign in with google</span>
+                            </button>
+                            
+                        </div>
                 </div>
             </div>
             <div className="flex justify-center items-center mt-6">
                 <Link
                     to="#"
-                    target="_blank"
                     className="
               inline-flex
               items-center
@@ -185,7 +234,7 @@ const SignIn = () => {
                 </Link>
             </div>
         </div>
-    );
+    )
 };
 
 export default SignIn;

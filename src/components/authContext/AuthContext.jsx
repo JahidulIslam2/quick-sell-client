@@ -27,7 +27,7 @@ const AuthContext = ({children}) => {
         return signInWithEmailAndPassword(auth,email,password);
     }
 
-    const googleAuthProvider =()=>{
+    const GoogleSignIn =()=>{
         setLoader(true)
         return signInWithPopup(auth,googleAuth)
     }
@@ -49,8 +49,9 @@ const AuthContext = ({children}) => {
     const authInfo ={
         signUp,
         signInUserWithEmailpass,
-        googleAuthProvider,
+        GoogleSignIn,
         user,
+        loader
 
 
 

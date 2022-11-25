@@ -1,0 +1,86 @@
+[
+    {
+        "category_id": "1",
+        "name": "Yamaha R15",
+        "img": "https://i.ibb.co/Ch7Nhb0/giant-90549.jpg",
+        "originalPrice": "3500",
+        "resalePrice": "3000",
+        "yearsOfUse": "5 month",
+        "PostedTime": "11/10/2022",
+        "SellersName": "Fayez Ahmed",
+        "location": "chattogram",
+        "conditionType": "excellent"
+    },
+    {
+        "category_id": "1",
+        "name": "Suzuki Gsx-R150",
+        "img": "https://i.ibb.co/Ch7Nhb0/giant-90549.jpg",
+        "originalPrice": "3200",
+        "resalePrice": "2500",
+        "YearsOfUse": "8 month",
+        "postedTime": "10/10/2022",
+        "sellersName": "Rashed Wahid",
+        "location": "Comilla",
+        "conditionType": "Good"
+    },
+    {
+        "category_id": "1",
+        "name": "Honda cb 150",
+        "img": "https://i.ibb.co/zR8wR3R/cbr150r60012b0ec350c.jpg",
+        "originalPrice": "3500",
+        "resalePrice": "3200",
+        "yearsOfUse": "5 month",
+        "postedTime": "11/20/2022",
+        "sellersName": "Lipon Kazi",
+        "location": "Feni",
+        "conditionType": "Good"
+    },
+    {
+        "category_id": "2",
+        "name": "Hero splender",
+        "img": "https://i.ibb.co/FDmDYWV/features-bike.png",
+        "originalPrice": "1500",
+        "resalePrice": "1200",
+        "yearsOfUse": "8 month",
+        "postedTime": "11/18/2022",
+        "sellersName": "Nafiz Hossain",
+        "location": "Dhaka",
+        "conditionType": "Good"
+    },
+    {
+        "category_id": "2",
+        "name": "Honda cb shine",
+        "img": "https://i.ibb.co/RgBYM98/shine-right-front-three-quarter.jpg",
+        "originalPrice": "1700",
+        "resalePrice": "1500",
+        "yearsOfUse": "4 month",
+        "postedTime": "11/20/2022",
+        "sellersName": "Riaz Khandakar",
+        "location": "Dhaka",
+        "conditionType": "Good"
+    },
+    {
+        "category_id": "3",
+        "name": "Motocross fighter 150",
+        "img": "https://i.ibb.co/ggJfKRf/motocross-fighter-150.webp",
+        "originalPrice": "2300",
+        "resalePrice": "1800",
+        "yearsOfUse": "6 month",
+        "postedTime": "11/23/2022",
+        "sellersName": "Shariar Mahmud",
+        "location": "Feni",
+        "conditionType": "excellent"
+    },
+    {
+        "category_id": "3",
+        "name": "Kawasaki Klx",
+        "img": "https://i.ibb.co/8NKCNdC/kawasaki-klx-150.png",
+        "originalPrice": "3300",
+        "resalePrice": "3600",
+        "yearsOfUse": "2 month",
+        "postedTime": "11/24/2022",
+        "sellersName": "Kamrul Hasan",
+        "location": "Noakhali",
+        "conditionType": "excellent"
+    }
+]
