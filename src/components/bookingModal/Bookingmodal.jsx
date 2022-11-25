@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { ContextProvider } from '../authContext/AuthContext';
 
-const Bookingmodal = ({ data }) => {
+const Bookingmodal = ({ data,setData }) => {
     const { user } = useContext(ContextProvider)
     const { name, resalePrice } = data;
 
@@ -26,6 +26,7 @@ const Bookingmodal = ({ data }) => {
         }
 
         console.log(booking)
+        setData(null)
 
     }
 

@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const Category = () => {
     const categories = useLoaderData();
-    const [data,setData]=useState('')
+    const [data,setData]=useState(null)
 
     return (
         <div className="grid lg:grid-cols-3 sm:grid-cols-1 xs:grid-cols-1 md:grid-cols-3 gap-6 md:card-side my-16 sm:mx-auto">
@@ -18,7 +18,12 @@ const Category = () => {
 
             <div>
             </div>
-            <Bookingmodal data={data}></Bookingmodal>
+
+            {
+                data &&
+                <Bookingmodal data={data} setData={setData}></Bookingmodal>
+
+            }
 
         </div>
     );
