@@ -20,7 +20,7 @@ const Categories = () => {
     return (
         <div>
             <h1 className='text-3xl'>Available Bike Categories </h1>
-            <div className="grid lg:grid-cols-3 sm:grid-cols-1 xs:grid-cols-1 md:grid-cols-3 gap-6 md:card-side my-16 ">
+            <div className="grid lg:grid-cols-3 sm:grid-cols-1 xs:grid-cols-1 md:grid-cols-3 gap-6 md:card-side my-16 mx-auto ">
                 
                    {
                     categories?.map(item => <CategoriesCard item={item} key={item._id}></CategoriesCard>)

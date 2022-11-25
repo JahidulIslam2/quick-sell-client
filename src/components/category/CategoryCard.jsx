@@ -1,7 +1,17 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
+import Bookingmodal from './../bookingModal/Bookingmodal';
 
-const CategoryCard = ({ category }) => {
+
+
+const CategoryCard = ({ category,setData}) => {
     const { name, img, location, postedTime, sellersName, conditionType, originalPrice, resalePrice, yearsOfUse } = category;
+
+    
+
+
+    const notify = () => toast.success('Successfully open');
+
     return (
         <div>
             <div className="card w-96 shadow-xl border-2">
@@ -23,10 +33,18 @@ const CategoryCard = ({ category }) => {
                     <p className='text-lg font-semibold'>Sellers Name: <span className='text-lg font-bold'>{sellersName}</span>
                     </p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Book Now</button>
+                        <label onClick={()=>setData({name,resalePrice})} htmlFor="bookingModal" className="btn btn-primary">
+                            Book Now
+                        </label>
+                       
                     </div>
+                 
                 </div>
-            </div>
+                   
+               
+                    
+            </div>                                                   {/*  onClick={notify} */}
+
         </div>
     );
 };
