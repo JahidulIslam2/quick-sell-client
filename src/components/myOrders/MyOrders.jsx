@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { ContextProvider } from './../authContext/AuthContext';
 import { useState } from 'react';
 import { HiOutlineUserCircle } from "react-icons/hi";
+import { Link } from 'react-router-dom';
 
 const MyOrders = () => {
     const { user,setLoader } = useContext(ContextProvider)
@@ -14,6 +15,7 @@ const MyOrders = () => {
 
             .then(res => res.json())
             .then(data => {
+               
                 setOrdersData(data)
             })
     }, [user?.email])
@@ -38,7 +40,7 @@ const MyOrders = () => {
 
                         {
                             ordersData?.map((order, i) =>
-                                <tr>
+                                <tr key={order._id}>
                                     <th>{i + 1}</th>
                                     <th> 
                                          <div className="avatar">
@@ -56,7 +58,17 @@ const MyOrders = () => {
                                     </th>
                                     <td>{order?.name}</td>
                                     <td>${order?.resalePrice}</td>
-                                    <td><button className="btn btn-sm bg-red-600">Pay Now</button></td>
+                                    <td>
+                                        {
+                                             order.resalePrice && !order.paid &&
+                                        <Link to={`/payment/${order._id}`}>
+                                        <button className="btn btn-sm bg-red-600">Pay Now</button>
+                                        </Link>
+                                        }
+                                         {
+                                            order.resalePrice && order.paid && <span className='text-green-600'>paid</span>
+                                        }
+                                        </td>
                                 </tr>
                             )
                         }

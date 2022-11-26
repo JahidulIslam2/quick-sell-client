@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Category from '../components/category/Category';
 import MyOrders from '../components/myOrders/MyOrders';
+import Payment from '../components/payment/Payment';
 import SignIn from '../components/signIn/SignIn';
 import SignUp from '../components/signUp/SignUp';
 import Home from '../pages/home/Home';
@@ -34,6 +35,11 @@ const route =createBrowserRouter([
             {
                 path: '/myOrders',
                 element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({params}) => fetch(`http://localhost:5000/booking/${params.id}`)
             }
         ]
     }
