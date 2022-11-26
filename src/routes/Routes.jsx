@@ -5,6 +5,8 @@ import Payment from '../components/payment/Payment';
 import SignIn from '../components/signIn/SignIn';
 import SignUp from '../components/signUp/SignUp';
 import Home from '../pages/home/Home';
+import PrivateRoute from '../privateRoute/PrivateRoute';
+import DashBoardRoot from '../root/DashBoardRoot';
 import Root from '../root/Root';
 
 const route =createBrowserRouter([
@@ -42,6 +44,10 @@ const route =createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/booking/${params.id}`)
             }
         ]
+    },
+    {
+        path: '/dashboard',
+        element:<PrivateRoute><DashBoardRoot></DashBoardRoot></PrivateRoute>
     }
 ])
 

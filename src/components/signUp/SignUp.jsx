@@ -6,23 +6,23 @@ import { Link } from 'react-router-dom';
 const SignUp = () => {
     const { signUp } = useContext(ContextProvider)
 
-    const formHandler =(event) => {
+    const formHandler = (event) => {
         event.preventDefault()
-        const formData=event.target;
-        const name=formData.name.value;
-        const email=formData.email.value;
-        const password=formData.password.value;
-        console.log(name,email,password)
+        const formData = event.target;
+        const name = formData.name.value;
+        const email = formData.email.value;
+        const password = formData.password.value;
+        console.log(name, email, password)
 
 
-        signUp(email,password)
-        .then(data => {
-            const user= data.user;
-            console.log(user)
-        })
-        .catch((error)=>{
-            console.error(error)
-        })
+        signUp(email, password)
+            .then(data => {
+                const user = data.user;
+                console.log(user)
+            })
+            .catch((error) => {
+                console.error(error)
+            })
 
     }
 
@@ -138,9 +138,20 @@ const SignUp = () => {
                                     />
                                 </div>
                             </div>
+                            <label
+                                    className="mb-1 text-xs tracking-wide text-gray-600"
+                                >Select a Option:</label
+                                >
+                            <div className='relative'>
+                                <select className="select w-full max-w-xs">
+                                    <option selected>buyer</option>
+                                    <option>Seller</option>
+                                   
+                                </select>
+                            </div>
                             <div className="flex flex-col mb-6">
                                 <label
-                                  
+
                                     className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
                                 >Password:</label
                                 >
@@ -236,10 +247,10 @@ const SignUp = () => {
             text-xs text-center
           "
                     >
-                        <span className="ml-2"
+                        <span className="ml-2 text-lg"
                         >You have an account?
                             <Link to="/signIn"
-                                className="text-xs ml-2 text-blue-500 font-semibold"
+                                className=" ml-2 text-blue-500 font-semibold"
                             >Login here</Link></span
                         >
                     </Link>
