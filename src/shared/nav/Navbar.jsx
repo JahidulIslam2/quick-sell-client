@@ -1,13 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { ContextProvider } from '../../components/authContext/AuthContext';
 
 
 
 const Navbar = () => {
 
-    
     const [navbar, setNavbar] = useState(false);
+    const {logOutMethod,user} =useContext(ContextProvider)
+
+
+    const HandleLogOut=() => {
+        logOutMethod()
+        .then(()=>{})
+        .catch((error)=>{
+            console.error(error)
+        })
+    }
+
     return (
         <>
             
@@ -74,7 +86,14 @@ const Navbar = () => {
                                 <Link to='/'>Blog</Link>
                             </li>
                             <li className="text-white font-bold hover:text-blue-600">
-                                <Link to='/signIn'>Sign In</Link>
+                                {
+                                    user?.email ?
+                                    <button onClick={HandleLogOut} className="btn btn-ghost text-red-600">Sign Out</button>
+                                    :
+                                    <Link to='/signIn'>Sign In</Link>
+
+
+                                }
                             </li>
                         </ul>
                     </div>

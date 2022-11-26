@@ -21,16 +21,6 @@ const PrivateRoute = ({children}) => {
 
 
     return children;
-
-    
-
-
-
-    return (
-        <div>
-            
-        </div>
-    );
 };
 
 export default PrivateRoute;

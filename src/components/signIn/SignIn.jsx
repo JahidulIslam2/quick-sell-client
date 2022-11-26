@@ -1,10 +1,17 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ContextProvider } from '../authContext/AuthContext';
+import { toast } from 'react-hot-toast';
 
 const SignIn = () => {
 const {signInUserWithEmailpass,GoogleSignIn} =useContext(ContextProvider)
+
+const navigate =useNavigate();
+const location =useLocation();
+
+
+const from = location.state?.from?.pathName || '/'
 
     const loginFormHandler =(event) => {
         event.preventDefault();
@@ -16,9 +23,15 @@ const {signInUserWithEmailpass,GoogleSignIn} =useContext(ContextProvider)
         .then(result => {
             const user=result.user;
             console.log(user)
+            toast.success('Login successful')
+
+            
         })
+        form.reset()
+        navigate(from, { replace: true })
         .catch((error)=>{
             console.error(error)
+            toast.error('sorry Login failed')
         })
 
 
