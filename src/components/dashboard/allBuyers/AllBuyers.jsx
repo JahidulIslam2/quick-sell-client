@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import Loader from '../../../shared/loader/Loader';
 
 const AllBuyers = () => {
 
@@ -23,13 +24,19 @@ const AllBuyers = () => {
         .then(data => {
             console.log(data)
             if(data.deletedCount > 0){
-                toast.success('Deleted successfully')
+                toast.success('Successfully Delete Buyers')
             refetch();
         }
            
 
         })
 
+
+    }
+
+    if (isLoading) {
+        
+        return <Loader></Loader>
 
     }
 

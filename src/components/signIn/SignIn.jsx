@@ -237,11 +237,11 @@ const from = location.state?.from?.pathName || '/'
               text-xs text-center
             "
                 >
-                    <span className="ml-2"
+                    <span className="ml-2 text-lg"
                     >You don't have an account?
                         <Link
                             to="/signUp"
-                            className="text-xs ml-2 text-blue-500 font-semibold"
+                            className="text-lg ml-2 text-blue-500 font-semibold"
                         >Register now</Link
                         ></span
                     >
