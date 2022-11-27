@@ -1,10 +1,13 @@
 import React from 'react';
 import { useContext } from 'react';
 import { ContextProvider } from '../authContext/AuthContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 const SignUp = () => {
-    const { signUp } = useContext(ContextProvider)
+    const { signUp, UpdateUsers } = useContext(ContextProvider)
+
+    const navigate =useNavigate();
 
     const formHandler = (event) => {
         event.preventDefault()
@@ -12,18 +15,56 @@ const SignUp = () => {
         const name = formData.name.value;
         const email = formData.email.value;
         const password = formData.password.value;
-        console.log(name, email, password)
+        const role = formData.role.value;
+        console.log(name, email, password, role)
 
 
         signUp(email, password)
             .then(data => {
                 const user = data.user;
+                toast.success('Successfully signed up')
                 console.log(user)
+
+                const userInfo = {
+                    displayName: name,
+                }
+                UpdateUsers(userInfo)
+                    .then(() => {
+                        saveUserInfo (name,email,role)
+                        formData.reset()
+                    })
+                    .catch((error) => {
+                        console.error(error)
+                    })
+
+
+
+
             })
             .catch((error) => {
                 console.error(error)
             })
 
+    }
+
+//users info 
+    const saveUserInfo = (name, email, role) => {
+
+        const users = { name, email, role }
+        fetch('http://localhost:5000/users',{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body:JSON.stringify(users),
+        })
+        .then((res)=>res.json())
+        .then(data => {
+            console.log('users',data)
+            navigate('/')
+
+        })
+        
     }
 
 
@@ -50,7 +91,7 @@ const SignUp = () => {
         "
                 >
                     <div className="font-medium self-center text-xl sm:text-3xl text-gray-800">
-                        Join us Now
+                        Sign Up Now
                     </div>
                     <div className="mt-4 self-center text-xl sm:text-sm text-gray-800">
                         Enter your credentials to get access account
@@ -139,14 +180,14 @@ const SignUp = () => {
                                 </div>
                             </div>
                             <label
-                                    className="mb-1 text-xs tracking-wide text-gray-600"
-                                >Select a Option:</label
-                                >
+                                className="mb-1 text-xs tracking-wide text-gray-600"
+                            >Select a Option:</label
+                            >
                             <div className='relative'>
-                                <select className="select w-full max-w-xs">
-                                    <option selected>buyer</option>
-                                    <option>Seller</option>
-                                   
+                                <select name='role' className="select w-full max-w-xs">
+                                    <option selected value='buyers'>buyers</option>
+                                    <option value='sellers'>Sellers</option>
+
                                 </select>
                             </div>
                             <div className="flex flex-col mb-6">

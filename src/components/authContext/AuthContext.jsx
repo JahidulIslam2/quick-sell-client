@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthPro
 import { getAuth } from 'firebase/auth';
 import app from './../../firebase/firebase.config';
 import { useEffect } from 'react';
+import { updateProfile } from 'firebase/auth';
 
 
 export const ContextProvider=createContext()
@@ -34,7 +35,13 @@ const AuthContext = ({children}) => {
 
 
     const logOutMethod = () =>{
+        setLoader(true)
         return signOut(auth);
+    }
+
+    const UpdateUsers =(profile) =>{
+        return updateProfile(auth.currentUser,profile)
+
     }
 
 
@@ -58,6 +65,7 @@ const AuthContext = ({children}) => {
         user,
         loader,
         logOutMethod,
+        UpdateUsers
 
 
 
