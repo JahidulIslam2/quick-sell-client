@@ -24,11 +24,12 @@ const from = location.state?.from?.pathName || '/'
             const user=result.user;
             console.log(user)
             toast.success('Login successful')
-
+            navigate(from, { replace: true })
+            form.reset()
             
         })
-        form.reset()
-        navigate(from, { replace: true })
+        
+       
         .catch((error)=>{
             console.error(error)
             toast.error('sorry Login failed')
