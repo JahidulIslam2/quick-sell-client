@@ -1,8 +1,10 @@
 import React from 'react';
 
-const MyProductCard = ({ product }) => {
 
-    const { productName, price, selected, phone, location, purchaseYear, description, imgUrl, } = product;
+const MyProductCard = ({ product,handleDeleteProduct }) => {
+
+    const { productName, price, selected, phone, location, purchaseYear, description, imgUrl,_id } = product;
+
 
     return (
         <div className="card w-96 shadow-xl border-2">
@@ -30,7 +32,7 @@ const MyProductCard = ({ product }) => {
 
                     </div>
                     <div className="card-actions ">
-                        <label className="btn bg-red-600 border-none">
+                        <label onClick={()=>handleDeleteProduct(_id)} className="btn bg-red-600 border-none">
                            Delete
                         </label>
 

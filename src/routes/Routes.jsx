@@ -9,6 +9,8 @@ import Payment from '../components/payment/Payment';
 import SignIn from '../components/signIn/SignIn';
 import SignUp from '../components/signUp/SignUp';
 import IsAdminRoute from '../isAdminRoute/IsAdminRoute';
+import IsBuyersRoute from '../isBuyersRoute/IsBuyersRoute';
+import IsSellersRoute from '../isSellersRoute/IsSellersRoute';
 import Home from '../pages/home/Home';
 import PrivateRoute from '../privateRoute/PrivateRoute';
 import DashBoardRoot from '../root/DashBoardRoot';
@@ -36,12 +38,12 @@ const route = createBrowserRouter([
             },
             {
                 path: '/category/:id',
-                element: <Category></Category>,
+                element: <IsBuyersRoute> <Category></Category> </IsBuyersRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
                 path: '/myOrders',
-                element: <MyOrders></MyOrders>
+                element: <IsBuyersRoute> <MyOrders></MyOrders> </IsBuyersRoute>
             },
             {
                 path: '/payment/:id',
@@ -64,11 +66,11 @@ const route = createBrowserRouter([
             },
             {
                 path: '/dashboard/addproduct',
-                element: <AddProduct></AddProduct>
+                element: <IsSellersRoute> <AddProduct></AddProduct> </IsSellersRoute>
             },
             {
                 path: '/dashboard/myproduct',
-                element: <MyProduct></MyProduct>
+                element: <IsSellersRoute>  <MyProduct></MyProduct> </IsSellersRoute>
             }
         ]
     }

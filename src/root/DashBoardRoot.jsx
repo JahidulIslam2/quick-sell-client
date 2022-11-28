@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { ContextProvider } from '../components/authContext/AuthContext';
 import useAdmin from '../hooks/useAdmin';
+import useSellers from '../hooks/useSellers';
 import Footer from '../shared/footer/Footer';
 import Navbar from '../shared/nav/Navbar';
 
@@ -11,7 +12,9 @@ import Navbar from '../shared/nav/Navbar';
 const DashBoardRoot = () => {
 
     const { user } = useContext(ContextProvider)
-    const [itsAdmin] = useAdmin(user.email)
+    const [itsAdmin] = useAdmin(user?.email)
+    const [itsSellers] = useSellers(user?.email)
+   
 
     return (
         <div>
@@ -35,8 +38,15 @@ const DashBoardRoot = () => {
                             </>
                         }
 
-                        <li><Link to={'/dashboard/addproduct'}>Add Product</Link></li>
-                        <li><Link to={'/dashboard/myproduct'}>My Product</Link></li>
+                        {
+                            itsSellers &&
+                            <>
+
+                                <li><Link to={'/dashboard/addproduct'}>Add Product</Link></li>
+                                <li><Link to={'/dashboard/myproduct'}>My Product</Link></li>
+
+                            </>
+                        }
                     </ul>
 
                 </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { ContextProvider } from '../../components/authContext/AuthContext';
+import useBuyers from './../../hooks/useBuyers';
 
 
 
@@ -10,6 +11,7 @@ const Navbar = () => {
 
     const [navbar, setNavbar] = useState(false);
     const { logOutMethod, user } = useContext(ContextProvider)
+    const [itsBuyers] = useBuyers(user?.email)
 
 
     const HandleLogOut = () => {
@@ -28,7 +30,7 @@ const Navbar = () => {
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
 
-                        <label htmlFor="dashboard-drawer" className="drawer-button lg:hidden">
+                            <label htmlFor="dashboard-drawer" className="drawer-button lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
 
                             </label>
@@ -84,9 +86,15 @@ const Navbar = () => {
                                 <li className="text-white font-bold hover:text-blue-600">
                                     <Link to='/'>Home</Link>
                                 </li>
-                                <li className="text-white font-bold hover:text-blue-600">
-                                    <Link to='/myOrders'>My Orders</Link>
-                                </li>
+                                {
+                                    itsBuyers &&
+                                    <>
+                                        <li className="text-white font-bold hover:text-blue-600">
+                                            <Link to='/myOrders'>My Orders</Link>
+                                        </li>
+
+                                    </>
+                                }
                                 <li className="text-white font-bold hover:text-blue-600">
                                     <Link to='/dashboard'>Dashboard</Link>
                                 </li>

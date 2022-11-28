@@ -10,7 +10,7 @@ const CategoryCard = ({ category,setData}) => {
     return (
         <div>
             <div className="card w-96 shadow-xl border-2">
-                <figure><img src={img} alt="bike" /></figure>
+                <figure><img className='h-80' src={img} alt="bike" /></figure>
                 <div className="card-body bg-zinc-300">
                     <h2 className="card-title font-bold text-3xl">{name}</h2>
                     <p className='text-lg font-semibold'>Condition : <span className='text-lg font-bold'>{conditionType}</span>
