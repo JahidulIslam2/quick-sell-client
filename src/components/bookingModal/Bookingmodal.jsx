@@ -76,7 +76,6 @@ const Bookingmodal = ({ data,setData }) => {
 
                         <input name='phone' type="phone" placeholder="Phone Number" className="input input-bordered w-full  my-4" required />
 
-
                         <button className='btn bg-green-600 w-full'>Submit</button>
                     </form>
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { toast } from 'react-hot-toast';
 
 
 
@@ -7,9 +6,6 @@ const CategoryCard = ({ category,setData}) => {
     const { name, img, location, postedTime, sellersName, conditionType, originalPrice, resalePrice, yearsOfUse } = category;
 
     
-
-
-    const notify = () => toast.success('Successfully open');
 
     return (
         <div>
