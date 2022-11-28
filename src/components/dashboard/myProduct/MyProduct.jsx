@@ -15,7 +15,7 @@ const MyProduct = () => {
         queryFn: async () => {
             try {
 
-                const res = await fetch(`http://localhost:5000/myProduct?email=${user?.email}`)
+                const res = await fetch(`https://quick-sell-server.vercel.app/myProduct?email=${user?.email}`)
                 const data = await res.json();
                 return data;
 
@@ -33,7 +33,7 @@ const MyProduct = () => {
     
     const handleDeleteProduct =(id) =>{
 
-        fetch(`http://localhost:5000/myProduct/${id}`,{
+        fetch(`https://quick-sell-server.vercel.app/myProduct/${id}`,{
             method: 'DELETE',
           
         })

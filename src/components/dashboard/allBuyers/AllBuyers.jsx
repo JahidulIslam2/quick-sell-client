@@ -8,7 +8,7 @@ const AllBuyers = () => {
     const { data: users =[] ,isLoading,refetch} = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/usersRole/buyers')
+            const res = await fetch('https://quick-sell-server.vercel.app/usersRole/buyers')
             const data = await res.json();
             return data
         }
@@ -17,7 +17,7 @@ const AllBuyers = () => {
     //delete buyers
     const handleDelete =(id) => {
 
-        fetch(`http://localhost:5000/usersRole/buyers/${id}`,{
+        fetch(`https://quick-sell-server.vercel.app/usersRole/buyers/${id}`,{
             method: 'DELETE',
         })
         .then(res => res.json())

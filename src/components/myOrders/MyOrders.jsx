@@ -11,7 +11,7 @@ const MyOrders = () => {
     const [ordersData, setOrdersData] = useState()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/booking?email=${user?.email}`)
+        fetch(`https://quick-sell-server.vercel.app/booking?email=${user?.email}`)
 
             .then(res => res.json())
             .then(data => {

@@ -51,7 +51,7 @@ const SignUp = () => {
     const saveUserInfo = (name, email, role) => {
 
         const users = { name, email, role }
-        fetch('http://localhost:5000/users',{
+        fetch('https://quick-sell-server.vercel.app/users',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

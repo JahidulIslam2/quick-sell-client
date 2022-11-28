@@ -37,7 +37,7 @@ const email=user.email;
            
         }
 
-        fetch('http://localhost:5000/myProduct',{
+        fetch('https://quick-sell-server.vercel.app/myProduct',{
             method: 'POST',
             headers: {
                 "content-type": "application/json",

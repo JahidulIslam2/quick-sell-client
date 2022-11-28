@@ -9,7 +9,7 @@ const AllSellers = () => {
         queryKey: ['sellers'],
         queryFn: async() => {
 
-            const res = await fetch('http://localhost:5000/usersRole/sellers')
+            const res = await fetch('https://quick-sell-server.vercel.app/usersRole/sellers')
             const data = await res.json();
             return data;
         }
@@ -19,7 +19,7 @@ const AllSellers = () => {
     const handleDelete =(id) =>{
 
         
-        fetch(`http://localhost:5000/usersRole/sellers/${id}`,{
+        fetch(`https://quick-sell-server.vercel.app/usersRole/sellers/${id}`,{
             method: 'DELETE',
         })
         .then(res => res.json())

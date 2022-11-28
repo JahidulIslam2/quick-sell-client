@@ -32,7 +32,7 @@ const Bookingmodal = ({ data,setData }) => {
         setData(null)
 
 
-        fetch('http://localhost:5000/booking',{
+        fetch('https://quick-sell-server.vercel.app/booking',{
             method: 'POST',
             headers: {
                 "content-type": "application/json"

@@ -99,7 +99,7 @@ const Navbar = () => {
                                     <Link to='/dashboard'>Dashboard</Link>
                                 </li>
                                 <li className="text-white font-bold hover:text-blue-600">
-                                    <Link to='/'>Blog</Link>
+                                    <Link to='/blog'>Blog</Link>
                                 </li>
                                 <li className="text-white font-bold hover:text-blue-600">
                                     {

@@ -20,7 +20,7 @@ const CheckoutForm = ({ bookedData }) => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/payment-intent', {
+        fetch('https://quick-sell-server.vercel.app/payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -99,7 +99,7 @@ const CheckoutForm = ({ bookedData }) => {
 
         if (paymentIntent.status === 'succeeded') {
 
-            fetch('http://localhost:5000/payment', {
+            fetch('https://quick-sell-server.vercel.app/payment', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
