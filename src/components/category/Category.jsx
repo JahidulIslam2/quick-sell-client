@@ -9,7 +9,7 @@ const Category = () => {
     const [data,setData]=useState(null)
 
     return (
-        <div className="grid lg:grid-cols-3 sm:grid-cols-1 xs:grid-cols-1 md:grid-cols-3 gap-6 md:card-side my-16 sm:mx-auto">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-1 xs:grid-cols-1 md:grid-cols-3 gap-6  my-16 justify-items-center mx-auto">
             {
                 categories.map(category => <CategoryCard category={category} key={category._id}
                     setData={setData}

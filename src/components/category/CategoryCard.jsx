@@ -9,7 +9,7 @@ const CategoryCard = ({ category,setData}) => {
 
     return (
         <div>
-            <div className="card w-96 shadow-xl border-2">
+            <div className="card w-96 shadow-xl border-2 ">
                 <figure><img className='h-80' src={img} alt="bike" /></figure>
                 <div className="card-body bg-zinc-300">
                     <h2 className="card-title font-bold text-3xl">{name}</h2>

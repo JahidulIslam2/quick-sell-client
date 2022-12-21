@@ -83,28 +83,28 @@ const Navbar = () => {
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                                <li className="text-white font-bold hover:text-blue-600">
+                                <li className=" text-white font-bold hover:text-blue-600 active:text-blue-600 ">
                                     <Link to='/'>Home</Link>
                                 </li>
                                 {
                                     itsBuyers &&
                                     <>
-                                        <li className="text-white font-bold hover:text-blue-600">
+                                        <li className="text-white font-bold hover:text-blue-600 ">
                                             <Link to='/myOrders'>My Orders</Link>
                                         </li>
 
                                     </>
                                 }
-                                <li className="text-white font-bold hover:text-blue-600">
+                                <li className="text-white font-bold hover:text-blue-600 ">
                                     <Link to='/dashboard'>Dashboard</Link>
                                 </li>
-                                <li className="text-white font-bold hover:text-blue-600">
+                                <li className="text-white font-bold hover:text-blue-600 active:text-blue-500 ">
                                     <Link to='/blog'>Blog</Link>
                                 </li>
-                                <li className="text-white font-bold hover:text-blue-600">
+                                <li className="text-white font-bold hover:text-blue-600 ">
                                     {
                                         user?.email ?
-                                            <button onClick={HandleLogOut} className="btn btn-ghost text-red-600">Sign Out</button>
+                                            <button onClick={HandleLogOut} className="btn btn-ghost text-red-600 focus:outline-none focus:ring">Sign Out</button>
                                             :
                                             <Link to='/signIn'>Sign In</Link>
 

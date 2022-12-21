@@ -57,8 +57,8 @@ const Bookingmodal = ({ data,setData }) => {
         <div>
 
             <input type="checkbox" id="bookingModal" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+            <div className="modal modal-bottom sm:modal-middle ">
+                <div className="modal-box ">
                     {/* close btn */}
                     <div className="modal-action">
                         <label  htmlFor="bookingModal" className="btn btn-ghost" >close</label>

@@ -3,6 +3,8 @@ import Categories from '../../components/categories/Categories';
 import Hero from '../../shared/hero/Hero';
 import Stat from '../../shared/state/Stat';
 
+
+
 const Home = () => {
     return (
         <div>
